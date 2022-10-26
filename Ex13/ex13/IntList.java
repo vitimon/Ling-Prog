@@ -20,7 +20,7 @@ public class IntList {
         return len;
     }
 
-    //Metodo para buscar o ultimo item de uma int list
+    //Metodo para buscar o ultimo item de uma IntList
 
     public int getLast(){
         ConsCell list = start;
@@ -31,22 +31,41 @@ public class IntList {
         }
         return currentLast;
     }
-
     
-
-    //METODOS TILT AINDA, SERÁ QUE TENHO QUE CRIAR UM TERCEIRO METODO PRA BUSCAR O ULTIMO ITEM?
-    /*
-    public IntList append(IntList y){
-        ConsCell list1 = this.start;
-        ConsCell list2 = y.start;
-        ConsCell listR = null;
-    
-
-        return IntList(list1.getHead());
+    //Metodo para buscar o Nésimo item numa IntList
+    public int getNth(int index){
+        ConsCell list = start;
+        int current = 0;
+        while(index > 0){
+            current = list.getHead();
+            list = list.getTail();
+            index--;
+        }
+        return current;
     }
-    public IntList appendR(IntList y){
-        ConsCell appended = null
 
-    }*/
+    public IntList append(IntList y){
+        ConsCell appendable = y.start;
+        int pushSize = this.length();
+        while(pushSize > 0){
+            appendable =  new ConsCell(this.getNth(pushSize), appendable);
+            pushSize--;
+        }
+        return  new IntList(appendable);
+    }
+
+    public IntList appendR(IntList y){
+        if(start.getTail() == null){
+            return new IntList(ConsCell(start.getHead(), y.start));
+        }
+        else{
+            ConsCell tail = start.getTail();
+            IntList tailList = IntList(tail);
+            IntList appended = tailList.appendR(y);
+            return new IntList(start.getHead(),appended.start);
+        }
+    }
+
+    //Refatorar!!!!!
 
 }
