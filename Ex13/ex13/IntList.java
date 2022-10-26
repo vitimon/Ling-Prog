@@ -13,21 +13,27 @@ public class IntList {
     public int length() {
         int len = 0;
         ConsCell cell = start;
-        while (cell != null) { // while not at end of list
+        while (cell != null) { 
             len++;
             cell = cell.getTail();
         }
         return len;
     }
-/*
- public IntList append(IntList y){
-    int thisHead = this.ConsCell.getHead();
-    ConsCell thisTail = this.ConsCell.getTail();
-    int yHead = y.ConsCell.getHead();
-    ConsCell yTail = y.ConsCell.getTail();
+    
+    //METODOS TILT AINDA, SERÁ QUE TENHO QUE CRIAR UM TERCEIRO METODO PRA BUSCAR O ULTIMO ITEM?
+
+    public IntList append(IntList y){
+        ConsCell list1 = this.start;
+        ConsCell list2 = y.start;
+        ConsCell listR = null;
+    
 
 
+        return IntList(list1.getHead());
+    }
+    public IntList appendR(IntList y){
+        ConsCell appended = null
 
-    return IntList(thisHead);
- }*/
+    }
+
 }

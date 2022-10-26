@@ -1,40 +1,19 @@
 package ex13;
 
-/**
- * A ConsCell is an element in a linked list of
- * ints.
- */
 public class ConsCell {
- private int head; // the first item in the list
- private ConsCell tail; // rest of the list, or null
- /**
- * Construct a new ConsCell given its head and tail.
- * @param h the int contents of this cell
- * @param t the next ConsCell in the list, or null
- */
- public ConsCell(int h, ConsCell t) {
- head = h;
- tail = t;
- }
- /**
- * Accessor for the head of this ConsCell.
- * @return the int contents of this cell
- */
- public int getHead() {
- return head;
- }
- /**
- * Accessor for the tail of this ConsCell.
- * @return the next ConsCell in the list, or null
- */
- public ConsCell getTail() {
- return tail;
- }
- /**
- * Mutator for the tail of this ConsCell.
- * @param t the new tail for this cell
- */
- public void setTail(ConsCell t) {
- tail = t;
- }
+    private int head;
+    private ConsCell tail;
+    public ConsCell(int h, ConsCell t) {
+        head = h;
+        tail = t;
+    }
+    public int getHead() {
+        return head;
+    }
+    public ConsCell getTail() {
+        return tail;
+        }
+    public void setTail(ConsCell t) {
+        tail = t;
+    }
 }
