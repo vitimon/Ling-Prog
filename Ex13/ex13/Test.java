@@ -36,7 +36,16 @@ public class Test {
         System.out.println(listC.getNth(4));
         //System.out.println(listC.getNth(5)); //              Vai da Erro
         //appendR
-        System.out.println("AppendR test")
+        System.out.println("AppendR test");
+        IntList listD = listC.appendR(listC);
+        System.out.println(listD.getNth(1));
+        System.out.println(listD.getNth(2));
+        System.out.println(listD.getNth(3));
+        System.out.println(listD.getNth(4));
+        System.out.println(listD.getNth(5));
+        System.out.println(listD.getNth(6));
+        System.out.println(listD.getNth(7));
+        System.out.println(listD.getNth(8));
 
     }
 }

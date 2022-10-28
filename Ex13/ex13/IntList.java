@@ -38,6 +38,7 @@ public class IntList {
         int current = 0;
         while(index > 0){
             current = list.getHead();
+            if(list == null){return current;}
             list = list.getTail();
             index--;
         }
@@ -56,13 +57,14 @@ public class IntList {
 
     public IntList appendR(IntList y){
         if(start.getTail() == null){
-            return new IntList(ConsCell(start.getHead(), y.start));
+            return new IntList(new ConsCell(start.getHead(), y.start));
         }
         else{
             ConsCell tail = start.getTail();
-            IntList tailList = IntList(tail);
+            IntList tailList =  new IntList(tail);
             IntList appended = tailList.appendR(y);
-            return new IntList(start.getHead(),appended.start);
+            ConsCell stackTail = new ConsCell(start.getHead(),appended.start);
+            return new IntList(stackTail);
         }
     }
 
