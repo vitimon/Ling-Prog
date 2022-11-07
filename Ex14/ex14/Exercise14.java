@@ -4,7 +4,7 @@ public class Exercise14{
   public static void main(String[] args) {
     System.out.printf("Mr Chekov, warp 4, engage ...\n\n");
 
-    HeapManager m = new HeapManager(new int[10]);
+    HeapManagerBF m = new HeapManagerBF(new int[10]);
 
     int p1, p2, p3;
 
