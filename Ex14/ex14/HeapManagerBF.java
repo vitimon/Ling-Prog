@@ -37,8 +37,10 @@ class HeapManagerBF {
 				bestSize = memory[p];
 			}
 			lag = p; 
-			p = memory[p+1]; 
+			p = memory[p+1];
+			//System.out.printf("\t[%d] AND %d\n",best,bestLag);
 		}
+
 		if (p==NULL && best==NULL) 
 			throw new OutOfMemoryError();
 		
